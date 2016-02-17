@@ -3,5 +3,11 @@ angular.module('MyApp', [])
 .controller('MainController', function(){
 	var self = this;
 
-	self.theme = "";
+	self.themeClass = {
+		ylw: false,
+		bl: false,
+		grn: false,
+		rd: false,
+		nne: false
+	};
 });
