@@ -10,7 +10,7 @@
 			<h3>First: <span ng-bind="ctrl.person.name.first" ng-if="!ctrl.editStatus"></span><span ng-if="ctrl.editStatus"><input type="text" ng-model="ctrl.newPerson.name.first"></span></h3>
 			<h3>Last: <span ng-bind="ctrl.person.name.last" ng-if="!ctrl.editStatus"></span><span ng-if="ctrl.editStatus"><input type="text" ng-model="ctrl.newPerson.name.last"></span></h3>
 			<h3>email: <span ng-bind="ctrl.person.email"></span></h3>
-			<button ng-click="ctrl.editInfo()" ng-if="!ctrl.editStatus">Edit</button>
+		 	<button ng-click="ctrl.editInfo()" ng-if="!ctrl.editStatus">Edit</button>
 			<div ng-if="ctrl.editStatus">
 				<button ng-click="ctrl.saveEdit()">Save</button>
 				<button ng-click="ctrl.cancelEdit()">Cancel</button>
