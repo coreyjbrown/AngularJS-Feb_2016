@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+		<style type="text/css">
+			.red {
+				color: red;
+			}
+			.green {
+				color: green;
+			}
+			.yellow {
+				color: yellow;
+			}
+		</style>
+	</head>
+
+	<body ng-app="MyApp">
+		<div ng-controller="MainController as ctrl">
+			<div ng-bind="ctrl.greeting"></div>
+			<!-- <h3>{{ctrl.greeting + ctrl.greeting + (3+2)}}</h3> -->
+
+			<!-- <h3>Simple ng-repeat</h3>
+			<div ng-repeat="item in ctrl.simpleArray">
+				<h4 ng-bind="item"></h4><div ng-bind="$first"></div>
+				<br/>
+				<br/>
+			</div>
+
+			<h3>Intermediate ng-repeat</h3>
+			<div ng-repeat="person in ctrl.interArray">
+				<h4 ng-bind="person.name"></h4>
+				<br/>
+				<br/>
+			</div>
+
+			<h3>Object ng-repeat</h3>
+			<div ng-repeat="(key, value) in ctrl.states">
+				<h3>Abbr:<span ng-bind="key"></span></h3>
+				<h3>Name:<span ng-bind="value"></span></h3>
+				<br/>
+				<br/>
+			</div> -->
+
+			<!-- <h3>Text ng-modal</h3>
+			<h3 ng-bind="ctrl.username"></h3>
+			<input type="text" ng-model="ctrl.myDog.name"> -->
+
+			<!-- <h3>Text ng-modal</h3>
+			<h3 ng-bind="ctrl.select"></h3>
+			<input type="checkbox" ng-model="ctrl.select">Select -->
+
+			<!-- <h3>Radio ng-modal</h3>
+			<h3 ng-bind="ctrl.animalSelected.name"></h3>
+			<input type="radio" name ="animal" ng-value="ctrl.myDog" ng-model="ctrl.animalSelected">Dog
+			<input type="radio" name ="animal" ng-value="ctrl.myCat" ng-model="ctrl.animalSelected">Cat
+			<input type="radio" name ="animal" ng-value="ctrl.myCow" ng-model="ctrl.animalSelected">Cow -->
+
+			<!-- <input type="checkbox" ng-model="ctrl.shouldShow"> -->
+			<!-- <div ng-show="ctrl.shouldShow" style="color:red">
+				This is showing
+			</div> -->
+
+			<!-- <div ng-hide="ctrl.shouldShow" style="color:green">
+				This is showing
+			</div> -->
+
+			<!-- <button ng-click="ctrl.onButtonClick()"></button> -->
+
+			<!-- <h3>ng-class string</h3>
+			<input type="text" ng-model="ctrl.userText">
+			<div ng-class="ctrl.userText">
+				Something happens here
+			</div> -->
+
+			<h3>ng-class string</h3>
+			<input type="checkbox" ng-model="ctrl.classObject.red">Red
+			<input type="checkbox" ng-model="ctrl.classObject.yellow">Yellow
+			<input type="checkbox" ng-model="ctrl.classObject.green">Green
+			<div ng-class="ctrl.classObject">
+				Something happens here
+			</div>
+		</div>
+	</body>
+
+</html>
