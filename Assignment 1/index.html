@@ -30,7 +30,7 @@
 					<div ng-repeat="(key, val) in ctrl.divisions">
 						<h3 ng-bind="key"></h3>
 						<div ng-repeat="team in val">
-							<h5 ng-bind="team"></h5>
+							<h5 ng-bind="team" ng-show="ctrl.expand"></h5>
 						</div>
 					</div>
 				</div>
