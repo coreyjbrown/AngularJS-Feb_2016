@@ -8,6 +8,19 @@ angular.module('MyApp', [])
 		bl: false,
 		grn: false,
 		rd: false,
-		nne: false
+		nne: true
+	};
+
+	self.expand = false;
+	self.newTeam = "";
+	self.addTeamToDivision = function(){
+		var nd = self.division;
+		var nt = self.newTeam;
+		self.divisions[nd].push(nt);
+	};
+	self.divisions = {
+		East: ['Blue Jays', 'Orioles', 'Rays'],
+		Central: ['Twins', 'Tigers', 'White Sox'],
+		West: ['Angels', 'Mariners', 'Rangers']
 	};
 });
