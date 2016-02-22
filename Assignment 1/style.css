@@ -54,14 +54,31 @@
 	background-color: #FF5252;
 	width: 50%;
 	float: left;
+	color: #FFFFFF;
 }
 
 .rd div:nth-of-type(3){
 	background-color: #D50000;
 	width: 50%;
 	float: right;
+	color: #FFFFFF;
 }
 
 .nne{
 	background-color: #FFFFFF;
+	color: #000000;
+}
+
+.nne div:nth-of-type(2){
+	background-color: #FFFFFF;
+	width: 50%;
+	float: left;
+	color: #000000;
+}
+
+.nne div:nth-of-type(3){
+	background-color: #FFFFFF;
+	width: 50%;
+	float: right;
+	color: #000000;
 }

@@ -8,6 +8,8 @@ angular.module('MyApp', [])
 		bl: false,
 		grn: false,
 		rd: false,
-		nne: false
+		nne: true
 	};
+
+	self.expand = false;
 });
