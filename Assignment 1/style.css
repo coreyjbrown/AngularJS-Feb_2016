@@ -2,13 +2,13 @@
 	background-color: #FFEB3B;
 }
 
-.ylw div:nth-of-type(2){
+.ylw #partOne div:nth-of-type(2){
 	background-color: #FFFF00;
 	width: 50%;
 	float: left;
 }
 
-.ylw div:nth-of-type(3){
+.ylw #partOne div:nth-of-type(3){
 	background-color: #FFD600;
 	width: 50%;
 	float: right;
@@ -18,13 +18,13 @@
 	background-color: #2196F3;
 }
 
-.bl div:nth-of-type(2){
+.bl #partOne div:nth-of-type(2){
 	background-color: #40C4FF;
 	width: 50%;
 	float: left;
 }
 
-.bl div:nth-of-type(3){
+.bl #partOne div:nth-of-type(3){
 	background-color: #0091EA;
 	width: 50%;
 	float: right;
@@ -34,13 +34,13 @@
 	background-color: #4CAF50;
 }
 
-.grn div:nth-of-type(2){
+.grn #partOne div:nth-of-type(2){
 	background-color: #69F0AE;
 	width: 50%;
 	float: left;
 }
 
-.grn div:nth-of-type(3){
+.grn #partOne div:nth-of-type(3){
 	background-color: #00C853;
 	width: 50%;
 	float: right;
@@ -50,14 +50,14 @@
 	background-color: #F44336;
 }
 
-.rd div:nth-of-type(2){
+.rd #partOne div:nth-of-type(2){
 	background-color: #FF5252;
 	width: 50%;
 	float: left;
 	color: #FFFFFF;
 }
 
-.rd div:nth-of-type(3){
+.rd #partOne div:nth-of-type(3){
 	background-color: #D50000;
 	width: 50%;
 	float: right;
@@ -69,16 +69,31 @@
 	color: #000000;
 }
 
-.nne div:nth-of-type(2){
+.nne #partOne div:nth-of-type(2){
 	background-color: #FFFFFF;
 	width: 50%;
 	float: left;
 	color: #000000;
 }
 
-.nne div:nth-of-type(3){
+.nne #partOne div:nth-of-type(3){
 	background-color: #FFFFFF;
 	width: 50%;
 	float: right;
 	color: #000000;
+}
+
+.lCol{
+	width: 50%;
+	float: left;
+}
+
+.rCol{
+	width: 50%;
+	float: right;
+}
+
+.btm{
+	position: absolute;
+	bottom: 0;
 }

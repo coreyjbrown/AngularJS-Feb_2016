@@ -12,4 +12,12 @@ angular.module('MyApp', [])
 	};
 
 	self.expand = false;
+	self.newTeam = "";
+	self.addTeamToDivision = function(){
+	};
+	self.divisions = {
+		East: ['Blue Jays', 'Orioles', 'Rays'],
+		Central: ['Twins', 'Tigers', 'White Sox'],
+		West: ['Angels', 'Mariners', 'Rangers']
+	};
 });

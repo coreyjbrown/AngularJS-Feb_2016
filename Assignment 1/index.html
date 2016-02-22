@@ -7,25 +7,46 @@
 	</head>
 	<body ng-app="MyApp">
 		<div ng-controller="MainController as ctrl" ng-class="ctrl.themeClass">
-			<div style="text-align:center">
-				<input type="radio" name="theme" value="ylw" ng-model="ctrl.themeClass">Yellow
-				<input type="radio" name="theme" value="bl" ng-model="ctrl.themeClass">Blue
-				<input type="radio" name="theme" value="grn" ng-model="ctrl.themeClass">Green
-				<input type="radio" name="theme" value="rd" ng-model="ctrl.themeClass">Red
-				<input type="radio" name="theme" value="nne" ng-model="ctrl.themeClass">None
+			<div id="partOne">
+				<div style="text-align:center">
+					<input type="radio" name="theme" value="ylw" ng-model="ctrl.themeClass">Yellow
+					<input type="radio" name="theme" value="bl" ng-model="ctrl.themeClass">Blue
+					<input type="radio" name="theme" value="grn" ng-model="ctrl.themeClass">Green
+					<input type="radio" name="theme" value="rd" ng-model="ctrl.themeClass">Red
+					<input type="radio" name="theme" value="nne" ng-model="ctrl.themeClass">None
+				</div>
+				<br><br><br><br>
+				<div>
+					<p>Lorem ipsum dolor sit amet, eu his lorem invidunt electram, molestie suscipiantur nec at. Mei nonumes scriptorem no, vide tritani contentiones eu per. Sit at omnesque delicatissimi concludaturque, odio dolorem salutatus te est, vim dolorum ancillae eligendi ut. Quot putant aeterno et vix. Dicit iudicabit gloriatur vim ex, at sed error iisque aliquando, duo tibique deserunt antiopam ne. Ea admodum gubergren vis, quo delenit comprehensam te.</p>
+				</div>
+				<div>
+					<p>Lorem ipsum dolor sit amet, eu his lorem invidunt electram, molestie suscipiantur nec at. Mei nonumes scriptorem no, vide tritani contentiones eu per. Sit at omnesque delicatissimi concludaturque, odio dolorem salutatus te est, vim dolorum ancillae eligendi ut. Quot putant aeterno et vix. Dicit iudicabit gloriatur vim ex, at sed error iisque aliquando, duo tibique deserunt antiopam ne. Ea admodum gubergren vis, quo delenit comprehensam te.</p>
+				</div>
 			</div>
-			<br><br><br><br>
-			<div>
-				<p>Lorem ipsum dolor sit amet, eu his lorem invidunt electram, molestie suscipiantur nec at. Mei nonumes scriptorem no, vide tritani contentiones eu per. Sit at omnesque delicatissimi concludaturque, odio dolorem salutatus te est, vim dolorum ancillae eligendi ut. Quot putant aeterno et vix. Dicit iudicabit gloriatur vim ex, at sed error iisque aliquando, duo tibique deserunt antiopam ne. Ea admodum gubergren vis, quo delenit comprehensam te.</p>
+			<br/><br/><br/><br/>
+			<div id="partTwo">
+				<div class="lCol">
+					<input type="checkbox" name="expand" ng-model="ctrl.expand">Expand
+					<div ng-repeat="(key, val) in ctrl.divisions">
+						<h3 ng-bind="key"></h3>
+						<div ng-repeat="team in val">
+							<h5 ng-bind="team"></h5>
+						</div>
+					</div>
+				</div>
+				<div class="rCol">
+					<div>
+						<input type="text" name="newTeam" ng-model="ctrl.newTeam">
+						<button ng-click="ctrl.addTeamToDivision()">Add</button>
+					</div>
+					<div>
+						<input type="radio" name="division" value="East" ng-model="ctrl.division">East
+						<input type="radio" name="division" value="Central" ng-model="ctrl.division">Central
+						<input type="radio" name="division" value="West" ng-model="ctrl.division">West
+					</div>
+				</div>
 			</div>
-			<div>
-				<p>Lorem ipsum dolor sit amet, eu his lorem invidunt electram, molestie suscipiantur nec at. Mei nonumes scriptorem no, vide tritani contentiones eu per. Sit at omnesque delicatissimi concludaturque, odio dolorem salutatus te est, vim dolorum ancillae eligendi ut. Quot putant aeterno et vix. Dicit iudicabit gloriatur vim ex, at sed error iisque aliquando, duo tibique deserunt antiopam ne. Ea admodum gubergren vis, quo delenit comprehensam te.</p>
-			</div>
+			<!-- <pre class="btm">{{ctrl | json }}</pre> -->
 		</div>
-		<br><br><br><br>
-		<div>
-			<input type="checkbox" name="expand" ng-model="ctrl.expand">Expand
-		</div>
-		<pre>{{ctrl | json}}</pre>
 	</body>
 </html>
