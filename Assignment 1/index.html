@@ -27,9 +27,9 @@
 			<div id="partTwo">
 				<div class="lCol">
 					<input type="checkbox" name="expand" ng-model="ctrl.expand">Expand
-					<div ng-repeat="(key, val) in ctrl.divisions">
-						<h3 ng-bind="key"></h3>
-						<div ng-repeat="team in val">
+					<div ng-repeat="(division, teams) in ctrl.divisions">
+						<h3 ng-bind="division"></h3>
+						<div ng-repeat="team in teams">
 							<h5 ng-bind="team" ng-show="ctrl.expand"></h5>
 						</div>
 					</div>
