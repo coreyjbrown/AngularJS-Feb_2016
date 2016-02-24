@@ -10,4 +10,9 @@ angular.module('MyApp', [])
 		self.list.push(self.td);
 		self.td = {};
 	};
+
+	self.removeToDo = function(td){
+		console.log("hello world");
+		self.list.splice(td,1);
+	};
 });

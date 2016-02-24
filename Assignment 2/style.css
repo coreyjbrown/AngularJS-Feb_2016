@@ -7,3 +7,15 @@
 	float: right;
 	bottom: 0;
 }
+
+.High{
+	color: #F44336;
+}
+
+.Medium{
+	color: #FFEB3B;
+}
+
+.Low{
+	color: #4CAF50;
+}

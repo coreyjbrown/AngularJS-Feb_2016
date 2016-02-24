@@ -28,9 +28,11 @@
 		</div>
 		<br><br><br><br>
 		<div ng-repeat="item in ctrl.list">
-			<h3 ng-bind="item.name"></h3>
-			<p>Description: <span ng-bind="item.description"></span></p>
-			<p>Priority: <span ng-bind="item.priority"></span></p>
+			<br>
+			<h3 ng-bind="item.name" ng-class="item.priority"></h3>
+			<p ng-class="item.priority"><b>Description:</b> <span ng-bind="item.description"></span></p>
+			<p ng-class="item.priority"><b>Priority:</b> <span ng-bind="item.priority"></span></p>
+			<button ng-click="removeToDo()">Remove</button>
 			<br>
 		</div>
 		<pre class="rt">{{ctrl | json}}</pre>
