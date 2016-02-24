@@ -4,8 +4,10 @@ angular.module('MyApp', [])
 	var self = this;
 
 	self.td = {};
+	self.list = [];
 
 	self.addToDo = function(){
-		console.log("Hello World");
+		self.list.push(self.td);
+		self.td = {};
 	};
 });
