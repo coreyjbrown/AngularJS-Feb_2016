@@ -12,7 +12,7 @@ angular.module('MyApp', [])
 	};
 
 	self.removeToDo = function(td){
-		console.log("hello world");
-		self.list.splice(td,1);
+		var idx = self.list.indexOf(td);
+		self.list.splice(idx, 1);
 	};
 });

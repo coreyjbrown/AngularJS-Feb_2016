@@ -32,10 +32,10 @@
 			<h3 ng-bind="item.name" ng-class="item.priority"></h3>
 			<p ng-class="item.priority"><b>Description:</b> <span ng-bind="item.description"></span></p>
 			<p ng-class="item.priority"><b>Priority:</b> <span ng-bind="item.priority"></span></p>
-			<button ng-click="removeToDo()">Remove</button>
+			<button ng-click="ctrl.removeToDo(this.item)">Remove</button>
 			<br>
 		</div>
-		<pre class="rt">{{ctrl | json}}</pre>
+		<!-- <pre class="rt">{{ctrl | json}}</pre> -->
 	</div>	
 </body>
 </html>
