@@ -26,7 +26,14 @@
 		<div>
 			<button ng-click="ctrl.addToDo()">Add To-Do</button>
 		</div>
-		<pre class="btm">{{ctrl | json}}</pre>
+		<br><br><br><br>
+		<div ng-repeat="item in ctrl.list">
+			<h3 ng-bind="item.name"></h3>
+			<p>Description: <span ng-bind="item.description"></span></p>
+			<p>Priority: <span ng-bind="item.priority"></span></p>
+			<br>
+		</div>
+		<pre class="rt">{{ctrl | json}}</pre>
 	</div>	
 </body>
 </html>
