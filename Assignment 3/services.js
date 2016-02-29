@@ -14,7 +14,14 @@ angular.module('MyServices', [])
 	return Student;
 }])
 
-.service('Calc', function () {
+.value('scale', {
+	A: 0.9,
+	B: 0.8,
+	C: 0.7,
+	D: 0.6
+})
+
+.service('Calc', [function () {
 	var self = this;
 
 	self.getAverage = function(assignments){
@@ -25,26 +32,8 @@ angular.module('MyServices', [])
 		return total/assignments.length;
 	};
 
-	self.getGrade = function(average){
-		var grade = average >= 0.9 ? 'A' : average >= 0.8 ? 'B' : average >= 0.7 ? 'C' : average >= 0.6 ? 'D' : 'F';
-
-		// switch(student){
-		// 	case student.average >= 0.9:
-		// 		grade = 'A';
-		// 		break;
-		// 	case student.average >= 0.8 && student.average < 0.9:
-		// 		grade = 'B';
-		// 		break;
-		// 	case student.average >= 0.7 && student.average < 0.8:
-		// 		grade = 'C';
-		// 		break;
-		// 	case student.average >= 0.6 && student.average < 0.7:
-		// 		grade = 'D';
-		// 		break;
-		// 	default:
-		// 		grade = 'F';
-		// 		break;
-		// }
+	self.getGrade = function(average, scale){
+		var grade = average >= scale.A ? 'A' : average >= scale.B ? 'B' : average >= scale.C ? 'C' : average >= scale.D ? 'D' : 'F';
 		return grade;
 	};
 
@@ -52,4 +41,4 @@ angular.module('MyServices', [])
 		var passing = grade == 'A' || grade == 'B' || grade == 'C' ? 'True' : 'False';
 		return passing;
 	};
-});
+}]);
