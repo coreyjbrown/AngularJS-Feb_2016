@@ -9,7 +9,8 @@ angular.module('MyApp', ['MyServices'])
 		self.newStudent.addAssignment(self.newAssignment);
 		self.newAssignment = {};
 		self.average = Calc.getAverage(self.newStudent.assignments) || 0;
-		self.grade = Calc.getGrade(self);
+		self.grade = Calc.getGrade(self.average);
+		self.passing = Calc.getPassing(self.grade);
 	};
 
 });
