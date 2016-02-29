@@ -11,26 +11,28 @@
 <body ng-app="MyApp">
 	<div ng-controller="MainController as ctrl">
 
-		<h1>Student Grade Calculator</h1>
-		<div>
-			<label>Name: </label>
-			<span><input type="text" ng-model="ctrl.newStudent.name"></span>
-		</div>
-		<div>
-			<label>Id: </label>
-			<span><input type="text" ng-model="ctrl.newStudent.id"></span>
-		</div>
-		<br><br>
-		<div>
-			<label>Assignment: </label>
-			<span><input type="text" ng-model="ctrl.newAssignment.assignment"></span>
-		</div>
-		<div>
-			<label>Grade: </label>
-			<span><input type="number" min="0" max="100" ng-model="ctrl.newAssignment.grade"></span>
-		</div>
-		<div>
-			<button ng-click="ctrl.addNewAssignment()">Add</button>
+		<div class="inputs">
+			<h1>Student Grade Calculator</h1>
+			<div>
+				<label>Name: </label>
+				<span><input type="text" ng-model="ctrl.newStudent.name"></span>
+			</div>
+			<div>
+				<label>Id: </label>
+				<span><input type="text" ng-model="ctrl.newStudent.id"></span>
+			</div>
+			<br><br>
+			<div>
+				<label>Assignment: </label>
+				<span><input type="text" ng-model="ctrl.newAssignment.assignment"></span>
+			</div>
+			<div>
+				<label>Grade: </label>
+				<span><input type="number" min="0" max="100" ng-model="ctrl.newAssignment.grade"></span>
+			</div>
+			<div>
+				<button ng-click="ctrl.addNewAssignment()">Add</button>
+			</div>
 		</div>
 		<br><br><hr><br><br>
 		<div>
