@@ -49,12 +49,24 @@
 				</div>
 			</div>
 			<div class="rightCol">
-				Hello World
+				<h2>Course Grade</h2>
+				<div>
+					<label>Average: </label>
+					<span ng-bind="ctrl.average"></span>
+				</div>
+				<div>
+					<label>Grade: </label>
+					<span ng-bind="ctrl.grade"></span>
+				</div>
+				<div>
+					<label>Passing: </label>
+					<span ng-bind=""></span>
+				</div>
 			</div>
 		</div>
 
 		<br><br><br><br>
-		<pre>{{ctrl | json}}</pre>
+		<!-- <pre>{{ctrl | json}}</pre> -->
 	</div>
 </body>
 </html>

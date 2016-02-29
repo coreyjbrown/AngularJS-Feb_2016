@@ -1,7 +1,9 @@
 .leftCol{
 	float: left;
+	/*text-align: center;*/
 }
 
 .rightCol{
 	float: right;
+	/*text-align: center;*/
 }
