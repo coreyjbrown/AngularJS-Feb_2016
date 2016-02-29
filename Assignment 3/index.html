@@ -27,12 +27,33 @@
 		</div>
 		<div>
 			<label>Grade: </label>
-			<span><input type="number" min="0" max="100" ng-model="ctrl.newAssignment.rawGrade"></span>
+			<span><input type="number" min="0" max="100" ng-model="ctrl.newAssignment.grade"></span>
 		</div>
 		<div>
-			<button ng-click="ctrl.addAssignment()">Add</button>
+			<button ng-click="ctrl.addNewAssignment()">Add</button>
+		</div>
+		<br><br><hr><br><br>
+		<div>
+			<div class="leftCol">
+				<h2>Assignments</h2>
+				<div ng-repeat="assignment in ctrl.newStudent.assignments">
+					<div>
+						<label>Assignment: </label>
+						<span ng-bind="assignment.assignment"></span>
+					</div>
+					<div>
+						<label>Grade: </label>
+						<span ng-bind="assignment.grade * 100"></span>
+					</div>
+					<br>
+				</div>
+			</div>
+			<div class="rightCol">
+				Hello World
+			</div>
 		</div>
 
+		<br><br><br><br>
 		<pre>{{ctrl | json}}</pre>
 	</div>
 </body>

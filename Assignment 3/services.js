@@ -1,18 +1,20 @@
 angular.module('MyServices', [])
 
-.factory('Assignment', function () {
-	function Assignment(params){
-		angular.extend(this, params);
+.factory('Student', [function () {
+	function Student(newStudent){
+		this.assignments = [];
 	}
 
-	return Assignment;
-})
+	Student.prototype.addAssignment = function(newAssignment){
+		var myAssignment = newAssignment;
+		myAssignment.grade = myAssignment.grade / 100;
+		this.assignments.push(myAssignment);
+	};
+
+	return Student;
+}])
 
 .service('Calc', function () {
 	var self = this;
 
-	self.getWeightedGrade = function(rawGrade){
-		var weightedGrade = rawGrade / 100;
-		return weightedGrade;
-	};
 });

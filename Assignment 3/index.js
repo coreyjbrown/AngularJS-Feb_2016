@@ -1,15 +1,13 @@
 angular.module('MyApp', ['MyServices'])
 
-.controller('MainController', function(Assignment, Calc) {
+.controller('MainController', function(Student, Calc) {
 	var self = this;
 
-	self.newStudent = {};
-	self.newAssignment = {};
-	self.assignmentList = [];
+	self.newStudent = new Student();
 
-	self.addAssignment = function(){
-		self.newAssignment.weighted = Calc.getWeightedGrade(self.newAssignment.rawGrade);
-		var myAssignment = new Assignment(self.newAssignment);
-		self.assignmentList.push(myAssignment);
+	self.addNewAssignment = function(){
+		self.newStudent.addAssignment(self.newAssignment);
+		self.newAssignment = {};
 	};
+	
 });
