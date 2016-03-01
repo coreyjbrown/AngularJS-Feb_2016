@@ -18,7 +18,7 @@ angular.module('MyServices', [])
 	{
 		name: 'Sweet Home Alabama',
 		genre: 'Rock'
-	}, 
+	},
 	{
 		name: 'Thunderstruck',
 		genre: 'Rock'

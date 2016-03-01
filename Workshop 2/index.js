@@ -1,5 +1,6 @@
 angular.module('MyApp', ['MyServices'])
 
-.controller('MainController', function (User, Songs) {
+.controller('MainController', function(User, Songs) {
 	var self = this;
+	self.Songs = Songs;
 });
