@@ -35,20 +35,20 @@
 			<h2>Songs</h2>
 			<div ng-repeat="song in ctrl.Songs">
 				<div ng-show="song.genre == ctrl.genre">
-					<input type="checkbox" ><span ng-bind="song.name"></span>
+					<input type="checkbox" ng-model="song.isSelected"><span ng-bind="song.name"></span>
 				</div>
 			</div>
 		</div>
 		<div ng-show="ctrl.newUser.age >= 18">
 			<br><br>
-			<input type="checkbox">Explicit
+			<input type="checkbox" ng-model="ctrl.newUser.explicit">Explicit
 		</div>
 		<div>
 			<br><br>
-			<button ng-click="">Generate List</button>
+			<button ng-click="ctrl.myUser.generateSongList()">Generate List</button>
 		</div>
-		<br><br>
-		<!-- <pre>{{ctrl | json}}</pre> -->
+		<br><br><br><br>
+		<pre>{{ctrl | json}}</pre>
 	</div>
 </body>
 </html>

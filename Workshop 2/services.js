@@ -1,19 +1,5 @@
 angular.module('MyServices', [])
 
-.factory('User', [function () {
-	function User(newUser){
-		angular.extend(this, newUser);
-		this.songlist = [];
-	}
-
-	User.prototype.addSong = function(newSong){
-		var mySong = newSong;
-		this.songlist.push(mySong);
-	};
-
-	return User;
-}])
-
 .value('Songs', [
 	{
 		name: 'Sweet Home Alabama',
@@ -51,4 +37,33 @@ angular.module('MyServices', [])
 		name: ' . . . One More Time',
 		genre: 'Pop'
 	}
-]);
+])
+
+.factory('User', [function(Songs) {
+	function User(newUser){
+		angular.extend(this, newUser);
+		this.songlist = [];
+	}
+
+	User.prototype.generateSongList = function(){
+		var self = this;
+		var mySongs = Songs;
+		var isExplicit = self.explicit ? true : false;
+		mySongs.filter(function(e){
+			return e.isSelected;
+		}).map(function(e){
+			return {
+				name: e.name,
+				genre: e.genre,
+				explicit: isExplicit
+			};
+		}).forEach(function(e){
+			self.songList.push(e);
+		});
+		console.log(self.songlist);
+	};
+
+	return User;
+}])
+
+;
