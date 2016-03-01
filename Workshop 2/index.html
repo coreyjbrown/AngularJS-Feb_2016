@@ -22,6 +22,7 @@
 			</div>
 		</div>
 		<div>
+			<br><br>
 			<h2>Genre</h2>
 			<div>
 				<input type="radio" name="genre" value="Rock" ng-model="ctrl.genre">Rock
@@ -30,14 +31,24 @@
 			</div>
 		</div>
 		<div>
+			<br><br>
+			<h2>Songs</h2>
 			<div ng-repeat="song in ctrl.Songs">
 				<div ng-show="song.genre == ctrl.genre">
 					<input type="checkbox" ><span ng-bind="song.name"></span>
 				</div>
 			</div>
 		</div>
-		<br><br><br><br>
-		<pre>{{ctrl | json}}</pre>
+		<div ng-show="ctrl.newUser.age >= 18">
+			<br><br>
+			<input type="checkbox">Explicit
+		</div>
+		<div>
+			<br><br>
+			<button ng-click="">Generate List</button>
+		</div>
+		<br><br>
+		<!-- <pre>{{ctrl | json}}</pre> -->
 	</div>
 </body>
 </html>
