@@ -15,30 +15,30 @@
 			<h1>Student Grade Calculator</h1>
 			<div>
 				<label>Name: </label>
-				<span><input type="text" ng-model="ctrl.newStudent.name"></span>
+				<span><input type="text" ng-model="ctrl.myStudent.name"></span>
 			</div>
 			<div>
 				<label>Id: </label>
-				<span><input type="text" ng-model="ctrl.newStudent.id"></span>
+				<span><input type="text" ng-model="ctrl.myStudent.id"></span>
 			</div>
 			<br><br>
 			<div>
 				<label>Assignment: </label>
-				<span><input type="text" ng-model="ctrl.newAssignment.assignment"></span>
+				<span><input type="text" ng-model="ctrl.myStudent.myAssignment.assignment"></span>
 			</div>
 			<div>
 				<label>Grade: </label>
-				<span><input type="number" min="0" max="100" ng-model="ctrl.newAssignment.grade"></span>
+				<span><input type="number" min="0" max="100" ng-model="ctrl.myStudent.myAssignment.grade"></span>
 			</div>
 			<div>
-				<button ng-click="ctrl.addNewAssignment()">Add</button>
+				<button ng-click="ctrl.myStudent.addAssignment()">Add</button>
 			</div>
 		</div>
 		<br><br><hr><br><br>
 		<div>
 			<div class="leftCol">
 				<h2>Assignments</h2>
-				<div ng-repeat="assignment in ctrl.newStudent.assignments">
+				<div ng-repeat="assignment in ctrl.myStudent.assignments">
 					<div>
 						<label>Assignment: </label>
 						<span ng-bind="assignment.assignment"></span>
@@ -54,15 +54,15 @@
 				<h2>Course Grade</h2>
 				<div>
 					<label>Average: </label>
-					<span ng-bind="ctrl.average"></span>
+					<span ng-bind="ctrl.myStudent.average"></span>
 				</div>
 				<div>
 					<label>Grade: </label>
-					<span ng-bind="ctrl.grade"></span>
+					<span ng-bind="ctrl.myStudent.grade"></span>
 				</div>
 				<div>
 					<label>Passing: </label>
-					<span ng-bind="ctrl.passing"></span>
+					<span ng-bind="ctrl.myStudent.passing"></span>
 				</div>
 			</div>
 		</div>

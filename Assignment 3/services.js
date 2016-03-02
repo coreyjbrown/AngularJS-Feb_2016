@@ -1,19 +1,5 @@
 angular.module('MyServices', [])
 
-.factory('Student', [function () {
-	function Student(newStudent){
-		this.assignments = [];
-	}
-
-	Student.prototype.addAssignment = function(newAssignment){
-		var myAssignment = newAssignment;
-		myAssignment.grade = myAssignment.grade / 100;
-		this.assignments.push(myAssignment);
-	};
-
-	return Student;
-}])
-
 .value('scale', {
 	A: 0.9,
 	B: 0.8,
@@ -21,7 +7,7 @@ angular.module('MyServices', [])
 	D: 0.6
 })
 
-.service('Calc', [function () {
+.service('Calc', ['scale', function(scale) {
 	var self = this;
 
 	self.getAverage = function(assignments){
@@ -32,7 +18,7 @@ angular.module('MyServices', [])
 		return total/assignments.length;
 	};
 
-	self.getGrade = function(average, scale){
+	self.getGrade = function(average){
 		var grade = average >= scale.A ? 'A' : average >= scale.B ? 'B' : average >= scale.C ? 'C' : average >= scale.D ? 'D' : 'F';
 		return grade;
 	};
@@ -41,4 +27,22 @@ angular.module('MyServices', [])
 		var passing = grade == 'A' || grade == 'B' || grade == 'C' ? 'True' : 'False';
 		return passing;
 	};
+}])
+
+.factory('Student', ['Calc', function (Calc) {
+	function Student(newAssignment){
+		this.myAssignment = newAssignment;
+		this.assignments = [];
+	}
+
+	Student.prototype.addAssignment = function(){
+		this.grade = this.myAssignment.grade / 100;
+		this.assignments.push(this.myAssignment);
+		this.average = Calc.getAverage(this.assignments) || 0;
+		this.grade = Calc.getGrade(this.average);
+		this.passing = Calc.getPassing(this.grade);
+		this.myAssignment = {};
+	};
+
+	return Student;
 }]);
