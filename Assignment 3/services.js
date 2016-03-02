@@ -36,7 +36,6 @@ angular.module('MyServices', [])
 	}
 
 	Student.prototype.addAssignment = function(){
-		console.log(this);
 		this.grade = this.myAssignment.grade / 100;
 		this.assignments.push(this.myAssignment);
 		this.average = Calc.getAverage(this.assignments) || 0;
