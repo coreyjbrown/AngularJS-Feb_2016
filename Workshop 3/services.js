@@ -41,26 +41,33 @@ angular.module('MyServices', [])
 
 .factory('User', [function(Songs) {
 	function User(newUser){
-		angular.extend(this, newUser);
+		this.name = newUser.name;
+		this.age = newUser.age;
 		this.songlist = [];
 	}
 
-	User.prototype.generateSongList = function(){
+	User.prototype.generateSongList = function(Songs){
 		var self = this;
 		var mySongs = Songs;
-		var isExplicit = self.explicit ? true : false;
-		mySongs.filter(function(e){
+		var version = self.explicit ? 'Explicit' : 'Clean';
+		var filteredSongs = mySongs.filter(function(e){
 			return e.isSelected;
 		}).map(function(e){
 			return {
 				name: e.name,
 				genre: e.genre,
-				explicit: isExplicit
+				version: version
 			};
-		}).forEach(function(e){
-			self.songList.push(e);
 		});
-		console.log(self.songlist);
+
+		filteredSongs.forEach(function(e){
+			self.songlist.push(e);
+		});
+		console.table(self.songlist);
+	};
+
+	User.prototype.getVersions = function(explicit){
+		this.explicit = explicit;
 	};
 
 	return User;

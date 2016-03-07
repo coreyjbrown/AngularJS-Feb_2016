@@ -18,7 +18,7 @@
 			</div>
 			<div>
 				<label>Age: </label>
-				<input type="number" min="0" size="3" ng-model="ctrl.newUser.age">
+				<input type="number" min="0" size="3" ng-model="ctrl.newUser.age" ng-change="ctrl.getNewUser()">
 			</div>
 		</div>
 		<div>
@@ -41,14 +41,14 @@
 		</div>
 		<div ng-show="ctrl.newUser.age >= 18">
 			<br><br>
-			<input type="checkbox" ng-model="ctrl.newUser.explicit">Explicit
+			<input type="checkbox" ng-model="ctrl.newUser.explicit" ng-change="ctrl.myUser.getVersions(this)">Explicit
 		</div>
 		<div>
 			<br><br>
-			<button ng-click="ctrl.myUser.generateSongList()">Generate List</button>
+			<button ng-click="ctrl.myUser.generateSongList(ctrl.Songs)">Generate List</button>
 		</div>
 		<br><br><br><br>
-		<pre>{{ctrl | json}}</pre>
+		<!-- <pre>{{ctrl | json}}</pre> -->
 	</div>
 </body>
 </html>
