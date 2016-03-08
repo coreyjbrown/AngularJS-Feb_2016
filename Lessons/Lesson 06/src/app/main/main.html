@@ -1,0 +1,24 @@
+<div class="container">
+
+  <h1 ng-bind="ctrl.greeting"></h1>
+
+  <h3>People</h3>
+  <div ng-repeat="person in ctrl.people">
+  	<div>
+  		<label>Name:</label><span ng-bind="person.name"></span>
+  	</div>
+  	<div>
+  		<label>Eye Color:</label><span ng-bind="person.eyeColor"></span>
+  	</div>
+  	<div>
+  		<label>Company:</label><span ng-bind="person.company"></span>
+  	</div>
+  	<button class="btn btn-default" ng-click="ctrl.viewFriends(person)">View Friends</button>
+  	<div>
+	  	<h5>Friends</h5>
+	  	<div ng-repeat="friend in person.friends" ng-bind="friend.name"></div>
+    </div>
+  	<br><br>
+  </div>
+
+</div>
