@@ -8,12 +8,12 @@ angular.module('sampleNode')
 
   // self.todos = getAllTodos();
 
-
   function getAllTodos() {
     TodoListResource.query()
     .$promise
     .then(function onSuccesss(response){
       self.todos = response;
+      console.table(self.todos);
     });
   }
 
@@ -30,8 +30,9 @@ angular.module('sampleNode')
   self.editTodo = function(todo) {
     TodoDetailsResource.get({id: todo._id})
     .$promise
-    .then(function onSuccesss(repsonse){
+    .then(function onSuccesss(response){
       self.isEditing = true;
+      self.userTodo = response;
     })
   };
 
