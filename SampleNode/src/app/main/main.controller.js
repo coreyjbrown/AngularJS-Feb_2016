@@ -4,6 +4,7 @@ angular.module('sampleNode')
 
 .controller('MainCtrl', function(TodoAddResource, TodoListResource, TodoDetailsResource, TodoUpdateResource) {
   var self = this;
+  self.isEditing = false;
 
   // self.todos = getAllTodos();
 
@@ -27,8 +28,12 @@ angular.module('sampleNode')
   };
 
   self.editTodo = function(todo) {
-
-    };
+    TodoDetailsResource.get({id: todo._id})
+    .$promise
+    .then(function onSuccesss(repsonse){
+      self.isEditing = true;
+    })
+  };
 
   self.updateTodo = function(todo) {
 
