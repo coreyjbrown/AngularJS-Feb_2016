@@ -33,15 +33,16 @@ angular.module('sampleNode')
     .then(function onSuccesss(response){
       self.isEditing = true;
       self.userTodo = response;
-    })
+    });
   };
 
   self.updateTodo = function(todo) {
-
+    TodoUpdateResource.save()
   };
 
   self.cancelUpdate = function() {
-
+    self.isEditing = false;
+    self.userTodo = {};
   };
 
   getAllTodos();
