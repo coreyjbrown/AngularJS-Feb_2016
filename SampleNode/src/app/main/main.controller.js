@@ -5,8 +5,8 @@ angular.module('sampleNode')
 .controller('MainCtrl', function(TodoAddResource, TodoListResource, TodoDetailsResource, TodoUpdateResource) {
   var self = this;
   self.isEditing = false;
+  var tempTodo;
 
-  // self.todos = getAllTodos();
 
   function getAllTodos() {
     TodoListResource.query()
@@ -37,7 +37,14 @@ angular.module('sampleNode')
   };
 
   self.updateTodo = function(todo) {
-    TodoUpdateResource.save()
+    TodoUpdateResource.save(null, todo)
+    .$promise
+    .then(function onSuccesss(response){
+      // angular.extend(tempTodo, response, todo);
+      self.isEditing = false;
+      self.userTodo = {};
+      getAllTodos();
+    })
   };
 
   self.cancelUpdate = function() {
